@@ -1,0 +1,10 @@
+/etc/opt/jfrog/artifactory-4.1.0
+/opt/artifactory-powerpack-4.1.0
+/opt/artifactory-powerpack-4.1.0/etc.original
+/opt/artifactory-powerpack-4.1.0/bin
+/opt/artifactory-powerpack-4.1.0/logs
+/opt/artifactory-powerpack-4.1.0/logs/catalina
+/opt/artifactory-powerpack-4.1.0/misc
+/opt/artifactory-powerpack-4.1.0/run
+/opt/artifactory-powerpack-4.1.0/tomcat
+/opt/artifactory-powerpack-4.1.0/webapps

@@ -1,0 +1,2 @@
+opt/artifactory-powerpack-4.1.0/logs/catalina	opt/artifactory-powerpack-4.1.0/tomcat/logs
+etc/opt/jfrog/artifactory-4.1.0			opt/artifactory-powerpack-4.1.0/etc

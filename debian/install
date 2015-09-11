@@ -1,0 +1,9 @@
+etc/*                   etc/opt/jfrog/artifactory-4.1.0/
+etc/*			opt/artifactory-powerpack-4.1.0/etc.original/
+bin/*			opt/artifactory-powerpack-4.1.0/bin/
+misc/*			opt/artifactory-powerpack-4.1.0/misc/
+tomcat/bin/*		opt/artifactory-powerpack-4.1.0/tomcat/bin/
+tomcat/conf/*		opt/artifactory-powerpack-4.1.0/tomcat/conf/
+tomcat/lib/*		opt/artifactory-powerpack-4.1.0/tomcat/lib/
+tomcat/webapps/*	opt/artifactory-powerpack-4.1.0/tomcat/webapps/
+webapps/*		opt/artifactory-powerpack-4.1.0/webapps/

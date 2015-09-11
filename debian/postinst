@@ -1,0 +1,39 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    configure)
+
+    VERSION="4.1.0"
+    ARTIFACTORY_HOME="/opt/artifactory-powerpack-$VERSION"
+    ETC_HOME="/etc/opt/jfrog/artifactory-$VERSION"
+    ARTIFACTORY_USER=artifactory
+
+    useradd -m -s `which bash` ${ARTIFACTORY_USER} || true
+    cp ${ARTIFACTORY_HOME}/bin/artifactory.default ${ETC_HOME}/default
+    sed --in-place -e "
+            s,#export ARTIFACTORY_HOME=.*,export ARTIFACTORY_HOME=${ARTIFACTORY_HOME},g;
+            s,#export ARTIFACTORY_USER=.*,export ARTIFACTORY_USER=${ARTIFACTORY_USER},g;" ${ETC_HOME}/default
+    cp ${ARTIFACTORY_HOME}/misc/service/artifactory /etc/init.d/artifactory-$VERSION
+    sed --in-place -e "
+            s,artDefaultFile=.*,artDefaultFile=\"${ETC_HOME}/default\",g;" /etc/init.d/artifactory-$VERSION
+    chown -R ${ARTIFACTORY_USER} ${ETC_HOME}
+    chown -R ${ARTIFACTORY_USER} ${ARTIFACTORY_HOME}
+    chmod a+x /etc/init.d/artifactory-$VERSION
+    chmod a+x ${ARTIFACTORY_HOME}/bin/*
+    chmod a+x ${ARTIFACTORY_HOME}/tomcat/bin/*
+    chmod -R u+w ${ARTIFACTORY_HOME}/logs
+
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

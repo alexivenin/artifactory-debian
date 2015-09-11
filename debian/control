@@ -1,0 +1,12 @@
+Source: artifactory-4.1.0
+Section: unknown
+Priority: extra
+Maintainer: iow packaging <noc@iponweb.net>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Homepage: http://www.jfrog.com/open-source/
+
+Package: artifactory-4.1.0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, oracle-java8-jdk
+Description: artifactory
